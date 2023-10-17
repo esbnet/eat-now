@@ -1,14 +1,20 @@
 import { StyleSheet } from 'react-native';
 
-import EditScreenInfo from '../../components/EditScreenInfo';
+import { Link } from 'expo-router';
 import { Text, View } from '../../components/Themed';
 
 export default function TabTwoScreen() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Tab Two</Text>
+      <Text style={styles.title}>Pets</Text>
       <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="app/(tabs)/two.tsx" />
+      <Link href="/pets/add"  asChild style={styles.link} >
+        <Text >Adicionar</Text>
+      </Link>
+      <Link href="/pets/list"  asChild style={styles.link} >
+        <Text >listar</Text>
+      </Link>
+
     </View>
   );
 }
@@ -28,4 +34,11 @@ const styles = StyleSheet.create({
     height: 1,
     width: '80%',
   },
+  link: {
+    marginTop: 15,
+    paddingVertical: 15,
+    paddingHorizontal: 10,
+    borderRadius: 5,
+    backgroundColor: 'rgba(255,255,255,0.2)',
+  }
 });

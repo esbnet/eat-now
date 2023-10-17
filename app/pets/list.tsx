@@ -1,15 +1,12 @@
 import { StyleSheet } from 'react-native';
 
-import FontAwesome from '@expo/vector-icons/FontAwesome5';
-
-import React from 'react';
 import { Text, View } from '../../components/Themed';
 
-export default function TabOneScreen() {
+export default function Page() {
   return (
     <View style={styles.container}>
-      <FontAwesome name="cat" color={'#ffff00'} size={150} />
-      <Text style={styles.title}>eat now</Text>
+      <Text style={styles.title}>Seus pets</Text>
+      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
     </View>
   );
 }
@@ -21,7 +18,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   title: {
-    fontSize: 64,
+    fontSize: 20,
     fontWeight: 'bold',
   },
   separator: {
